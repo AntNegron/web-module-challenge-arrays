@@ -147,10 +147,19 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+//create for loop with .length and ++ to cycle through the whole array
+//splice allows you to remove an item by index position
+//then if index is === to flavor, splice the (index item, how many items are being removed). we want to remove one per new flavor introduced so 1.
+function removeFlavorByName(array, flavor){
+  for(let i =0; i <array.length; i++) {
+      if(array[i] === flavor) {
+        array.splice(i, 1);
+      }
+  }
+  return array;
 }
 
+console.log(removeFlavorByName(originalFlavors, 'Rocky Road'));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -173,10 +182,22 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+// receive array and string first, then make filteredArray equal an empty array so that it is the new one.
+//create a for loop to look through the entire array. if the current array includes the string, push that string to the array.
+//return the new filteredArray outside the for loop.
+//console.log as recommended in the example 
+
+function filterByWord(array, string){
+  let filteredArray = [];
+  for (let i = 0; i <array.length; i++) {
+    if (array[i].includes(string)) {
+      filteredArray.push(array[i]);
+    }
+  }
+  return filteredArray;
 }
 
+console.log(filterByWord(originalFlavors, "Chocolate"));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
